@@ -1,0 +1,59 @@
+{
+  "name": "lms-desktop",
+  "version": "1.0.0",
+  "description": "LMS Desktop (Electron wrapper)",
+  "main": "main.js",
+  "type": "commonjs",
+  "scripts": {
+    
+    "dev": "concurrently \"npm:dev:web\" \"npm:dev:electron\"",
+    "dev:web": "cd ../lms-web && npm run dev",
+    "dev:electron": "wait-on http://localhost:3000 && electron .",
+    "build:web": "cd ../lms-web && set DESKTOP=true && npm run build",
+    "start:web": "cd ../lms-web && npm run start",
+    "dist": "npm run build:web && electron-builder",
+    "dev:only": "wait-on http://127.0.0.1:3000 && electron .",
+    "dev:electron:media": "wait-on http://127.0.0.1:3000 && electron . --use-fake-ui-for-media-stream"
+
+
+  },
+  "build": {
+    "appId": "com.enes.lms",
+    "productName": "LMS Desktop",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "package.json",
+      "assets/**",
+      "static/**"
+    ],
+    "extraResources": [
+      {
+        "from": "static",
+        "to": "static"
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "LMS Desktop"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "concurrently": "^9.2.1",
+    "electron-builder": "^26.0.12",
+    "wait-on": "^9.0.3"
+  }
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offline - LMS Desktop</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #0b0b0b;
+        color: #fff;
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+      .card {
+        width: min(720px, 92vw);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 14px;
+        padding: 22px;
+      }
+      h1 {
+        margin: 0 0 8px 0;
+        font-size: 22px;
+      }
+      p {
+        margin: 0 0 14px 0;
+        opacity: 0.9;
+        line-height: 1.4;
+      }
+      button {
+        padding: 10px 14px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+      }
+      button:hover {
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+      .hint {
+        margin-top: 12px;
+        opacity: 0.7;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Çevrimdışısın</h1>
+      <p>
+        İnternet bağlantısı yok. Bağlantı gelince uygulama otomatik olarak LMS’ye
+        geri dönecek.
+      </p>
+      <button onclick="location.reload()">Tekrar Dene</button>
+      <div class="hint">LMS Desktop • Offline Senkron (minimum)</div>
+    </div>
+  </body>
+</html>
