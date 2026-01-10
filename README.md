@@ -111,5 +111,5 @@ Repo monorepo yapısındadır, tek GitHub reposu üzerinden yönetilir.
 
 👤 Geliştirici
 
-Enes
+Enes Cabbar AKÇA
 Ankara Üniversitesi – Yapay Zeka & Veri Mühendisliği
