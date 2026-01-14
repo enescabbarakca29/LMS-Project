@@ -13,7 +13,7 @@ import { useMemo, useState } from "react";
 import * as ImagePicker from "expo-image-picker";
 import { Ionicons } from "@expo/vector-icons";
 
-const API_BASE = "http://192.168.163.51:3005";
+const API_BASE = "http://192.168.163.51:3005"; // kendi IP'nize göre değiştirin aynı zamanda telefon ile desktopunuz aynı ağa bağlanmalı.
 // Android Emulator: 10.0.2.2
 // Gerçek telefon: bilgisayar IP (örn: 192.168.1.34)
 // iOS Simulator: http://localhost:3005
